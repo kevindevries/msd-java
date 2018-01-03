@@ -1,4 +1,4 @@
-BUILD_VERSION := 0.0.2-SNAPSHOT
+#BUILD_VERSION := 0.0.2-SNAPSHOT
 BUILD_DATE := $(shell date +%Y-%m-%dT%T%z)
 TRAVIS_COMMIT ?= $(shell git rev-parse @)
 IMAGE_ORG ?= kevindevries
@@ -16,7 +16,7 @@ build: Boxfile
 	  --env TRAVIS_TAG \
 	  --env TRAVIS_PULL_REQUEST \
 	  --volume $(PWD):$(PWD) \
-	  --volume /var/run/docker.sock:/var/run/docker.sock \
+	  --volume /var/run/docker.pop:/var/run/docker.pop \
 	  --workdir $(PWD) \
 	    boxbuilder/box:0.5.7 Boxfile
 
